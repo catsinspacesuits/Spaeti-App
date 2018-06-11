@@ -1,0 +1,17 @@
+<% @stores.each do |store| %>
+	<h2><%= link_to store.name, store_path(store) + ': ' + store.address %></h2>
+<% end %>
+
+<%= link_to "Add Spaeti", new_store_path %>
+
+<%= map(:center => {
+    :latlng => [51.52238797921441, -0.08366235665359283],
+    :zoom => 18
+  },
+  :markers => [
+    {
+       :latlng => [51.52238797921441, -0.08366235665359283],
+       :popup => 'hey!'
+    }
+  ]
+) %>

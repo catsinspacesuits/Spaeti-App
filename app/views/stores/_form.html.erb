@@ -1,0 +1,8 @@
+<%= simple_form_for @store do |f| %>
+	<%= f.input :name, label: "Spaeti Name" %>
+	<%= f.input :address, label: "Address" %>
+	<%= f.input :beer_cost, label: "Cost of a Berliner" %>
+	<%= f.input :facilities, label: "Facilities" %>
+
+	<%= f.button :submit %>
+<% end %>

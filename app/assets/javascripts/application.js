@@ -13,3 +13,9 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery
+//= require bootstrap-sprockets
+// = require leaflet
+
+// // var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+// var marker = L.marker([51.5, 0.12]).addTo(map);
