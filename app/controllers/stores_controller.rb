@@ -42,7 +42,7 @@ class StoresController < ApplicationController
 	private
 
 		def store_params
-			params.require(:store).permit(:name, :address, :beer_cost, :cig_cost)
+			params.require(:store).permit(:name, :address, :address_line2, :address_line3, :beer_cost)
 		end
 
 		def find_store

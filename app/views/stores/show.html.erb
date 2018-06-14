@@ -1,5 +1,7 @@
 <h2><%= 'Shop Name: ' + @store.name %></h2>
-<h3><%= 'Address: ' + @store.address %></h3>
+<h3><%= 'Address: ' + @store.full_address %></h3>
+<h3><%= 'Latitude: ' + @store.latitude.to_s %></h3>
+<h3><%= 'Longitude: ' + @store.longitude.to_s %></h3>
 <h3><%= 'Cost of 0.5l Berliner: €' + @store.beer_cost.to_s %></h3>
 
 <%= link_to 'Back', root_path %>
