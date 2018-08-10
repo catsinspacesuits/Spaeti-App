@@ -3,8 +3,22 @@
 <h3><%= 'Latitude: ' + @store.latitude.to_s %></h3>
 <h3><%= 'Longitude: ' + @store.longitude.to_s %></h3>
 <h3><%= 'Cost of 0.5l Berliner: €' + @store.beer_cost.to_s %></h3>
+<h3><%= 'Toilet: ' + @store.toilet.toilet_available %></h3>
 
 <%= link_to 'Back', root_path %>
-<%= link_to 'Edit', edit_store_path(@store) %>
-<%= link_to 'Delete', store_path(@store), method: :delete, data: { confirm: "Are you sure?" } %>
+
+<% if user_signed_in? %>
+
+	<% if @store.user_id == current_user.id %>
+
+	<%= link_to 'Edit', edit_store_path(@store) %>
+	<%= link_to 'Delete', store_path(@store), method: :delete, data: { confirm: "Are you sure?" } %>
+	
+	<% end %>
+
+<% end %>
+
+
+
+
 

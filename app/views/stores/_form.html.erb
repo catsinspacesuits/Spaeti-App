@@ -1,10 +1,10 @@
-<%= simple_form_for @store do |f| %>
+<%= simple_form_for @store,:html => { :multipart => true } do |f| %>
 	<%= f.input :name, label: "Spaeti Name" %>
 	<%= f.input :address, label: "Address" %>
-	<%= f.input :address_line2, label: "City" %>
-	<%= f.input :address_line3, label: "Country" %>
-	<%= f.input :beer_cost, label: "Cost of a Berliner" %>
-	<%= f.input :toilet,     as: :radio_buttons %>
+	<%= f.input :address_line2, label: "City", input_html: { value: "Berlin" } %>
+	<%= f.input :address_line3, label: "Country", input_html: { value: "Germany"} %>
+	<%= f.input :beer_cost, label: "Cost of a Berliner Pilsner" %>
+	<%= select_tag(:toilet_id, options_for_select(@toilets), :prompt => "Toilet available?" ) %>
 	<%= f.input :facilities, label: "Facilities" %>
 
 	<%= f.button :submit %>

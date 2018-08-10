@@ -3,16 +3,23 @@ class StoresController < ApplicationController
 	before_action :find_store, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@stores = Store.all.order("created_at DESC")
+		if params[:toilet].blank?
+			@stores = Store.all.order("created_at DESC")
+		else
+			@toilet_id = Toilet.find_by(toilet_available: params[:toilet]).id
+		  @stores = Store.where(:toilet_id => @toilet_id).order("created_at DESC")
+		end
 	end
 
 	def show
 	end
 
 	def edit
+		@toilets = Toilet.all.map{ |t| [t.toilet_available, t.id] }
 	end
 
 	def update
+		@store.toilet_id = params[:toilet_id] 
 		if @store.update(store_params)
 			redirect_to store_path(@store)
 		else
@@ -21,11 +28,13 @@ class StoresController < ApplicationController
 	end
 
 	def new
-		@store = Store.new
+		@store = current_user.stores.build
+		@toilets = Toilet.all.map{ |t| [t.toilet_available, t.id] }
 	end
 
 	def create
-		@store = Store.new(store_params)
+		@store = current_user.stores.build(store_params)
+		@store.toilet_id = params[:toilet_id] 
 
 		if @store.save 
 			redirect_to root_path
@@ -42,7 +51,7 @@ class StoresController < ApplicationController
 	private
 
 		def store_params
-			params.require(:store).permit(:name, :address, :address_line2, :address_line3, :beer_cost)
+			params.require(:store).permit(:name, :address, :address_line2, :address_line3, :beer_cost, :toilet_id)
 		end
 
 		def find_store

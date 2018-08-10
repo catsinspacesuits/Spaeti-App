@@ -1,2 +1,13 @@
 <h1>Edit Store</h1>
-<h2><%= render 'form' %></h2>
+
+<%= simple_form_for @store, :html => { :multipart => true } do |f| %>
+	<%= f.input :name, label: "Spaeti Name" %>
+	<%= f.input :address, label: "Address" %>
+	<%= f.input :address_line2, label: "City", input_html: { value: "Berlin" } %>
+	<%= f.input :address_line3, label: "Country", input_html: { value: "Germany"} %>
+	<%= f.input :beer_cost, label: "Cost of a Berliner" %>
+	<%= f.select :toilet_id, @toilets %>
+	<%= f.input :facilities, label: "Facilities" %>
+
+	<%= f.button :submit %>
+<% end %>
