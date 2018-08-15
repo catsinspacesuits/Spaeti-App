@@ -6,6 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   </head>
 
   <body>
@@ -23,7 +26,7 @@
 						<li><%= link_to "Log In", new_user_session_path %> </li>
 					<% end %>
 					<li><%= link_to "Add Spaeti", new_store_path %></li>
-					
+					<li><%= link_to "Spaetis with toilets", stores_path(toilet: Toilet.all[0].toilet_available) %></li>
 					
 					
 					
