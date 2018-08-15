@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20180814220216) do
     t.float "longitude"
     t.boolean "toilet"
     t.string "address_line2"
-    t.string "address_line3"
     t.integer "user_id"
     t.integer "toilet_id"
   end
