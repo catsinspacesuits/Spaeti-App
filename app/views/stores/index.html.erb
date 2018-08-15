@@ -9,19 +9,6 @@
   
 ) %>
 
-<%= map(:center => {
-    :latlng => [52.50504797921441, 13.4080235665359283],
-    :zoom => 12
-  },
 
-  markers: @stores.map { |store| { latlng: [store.latitude, store.longitude], 
-  # popup expects a string	
-  popup: store.name + ", " + store.address } } 
-  
-) %>
-
-<% @stores.each do |store| %>
-    <h2><%= link_to store.name, store_path(store) + ': ' + store.address %></h2>
-<% end %>
 
 
