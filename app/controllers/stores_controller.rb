@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
-
 	before_action :find_store, only: [:show, :edit, :update, :destroy]
+	before_action :set_toilets, except: [:show, :index]
 
 	def index
 		if params[:toilet].blank?
@@ -56,6 +56,10 @@ class StoresController < ApplicationController
 
 		def find_store
 			@store = Store.find(params[:id])
+		end
+
+		def set_toilets 
+		  @toilets = Toilet.all.pluck(:toilet_available, :id) 
 		end
 end
 

@@ -4,8 +4,7 @@
 	<%= f.input :address_line2, label: "City", input_html: { value: "Berlin" } %>
 	<%= f.input :address_line3, label: "Country", input_html: { value: "Germany"} %>
 	<%= f.input :beer_cost, label: "Cost of a Berliner Pilsner" %>
-	<%= select_tag(:toilet_id, options_for_select(@toilets), :prompt => "Toilet available?" ) %>
-	<%= f.input :facilities, label: "Facilities" %>
-
+	<%= select_tag(:toilet_id, options_for_select(@toilets), :prompt => "Toilet available?") %>
+	
 	<%= f.button :submit %>
 <% end %>
