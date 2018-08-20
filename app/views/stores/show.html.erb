@@ -1,4 +1,18 @@
 <h2><%= 'Shop Name: ' + @store.name %></h2>
+
+<%= map(:center => {
+    :latlng => [ @store.latitude, @store.longitude ],
+    :zoom => 15
+  },
+
+  :markers => [
+      {  
+         :latlng => [ @store.latitude, @store.longitude ],
+         :popup => @store.name
+      }
+    ]
+  ) %>
+
 <h3><%= 'Address: ' + @store.full_address %></h3>
 <h3><%= 'Latitude: ' + @store.latitude.to_s %></h3>
 <h3><%= 'Longitude: ' + @store.longitude.to_s %></h3>

@@ -59,7 +59,7 @@ class StoresController < ApplicationController
 		end
 
 		def set_toilets 
-		  @toilets = Toilet.all.pluck(:toilet_available, :id) 
+		  @toilets = Toilet.pluck(:toilet_available, :id) 
 		end
 end
 
