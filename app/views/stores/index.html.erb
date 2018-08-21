@@ -5,12 +5,12 @@
 
   markers: Store.all.map { |store| { latlng: [store.latitude, store.longitude], 
   # popup expects a string	
-  popup: store.name + ", " + store.address } } 
+  popup: store.capitalize_name + ", " + store.capitalize_address } } 
   
 ) %>
 
 <% @stores.each do |store| %>
-    <h2><%= link_to store.name, store_path(store) + ': ' + store.address %></h2>
+    <h2><%= link_to store.capitalize_name, store_path(store) + ': ' + store.capitalize_address %></h2>
 <% end %>
 
 

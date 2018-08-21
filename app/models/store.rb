@@ -18,4 +18,12 @@ class Store < ApplicationRecord
 	geocoded_by :full_address
 	before_validation :geocode,
 	  :if => lambda{ |obj| obj.address_changed? }
+
+	def capitalize_name
+		name.capitalize
+	end
+
+	def capitalize_address
+		address.capitalize
+	end
 end

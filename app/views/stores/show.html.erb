@@ -1,23 +1,26 @@
-<h2><%= 'Shop Name: ' + @store.name %></h2>
+<h2><%= 'Shop Name: ' + @store.capitalize_name %></h2>
+<h3><%= 'Address: ' + @store.capitalize_address %></h3>
+<!-- <h3><%= 'Latitude: ' + @store.latitude.to_s %></h3>
+<h3><%= 'Longitude: ' + @store.longitude.to_s %></h3> -->
+<h3><%= 'Cost of Berliner Pilsner (0.5l): €' + @store.beer_cost.to_s %></h3>
+<!-- <h3><%= 'Toilet: ' + @store.toilet.toilet_available %></h3> -->
+<% if @store.toilet.toilet_available == "Yes" %>
+<h3><%= "This Spaeti has a toilet!" %></h3>
+<% else %> 
+<% end %>
 
 <%= map(:center => {
     :latlng => [ @store.latitude, @store.longitude ],
-    :zoom => 15
+    :zoom => 17
   },
 
   :markers => [
       {  
          :latlng => [ @store.latitude, @store.longitude ],
-         :popup => @store.name
+         :popup => @store.capitalize_name + ", " + @store.capitalize_address 
       }
     ]
   ) %>
-
-<h3><%= 'Address: ' + @store.full_address %></h3>
-<h3><%= 'Latitude: ' + @store.latitude.to_s %></h3>
-<h3><%= 'Longitude: ' + @store.longitude.to_s %></h3>
-<h3><%= 'Cost of 0.5l Berliner: €' + @store.beer_cost.to_s %></h3>
-<h3><%= 'Toilet: ' + @store.toilet.toilet_available %></h3>
 
 <%= link_to 'Back', root_path %>
 
