@@ -29,7 +29,9 @@
 						<li><%= link_to "Log In", new_user_session_path %> </li>
 						<li><%= link_to "Add Spaeti", new_user_registration_path %> </li>
 					<% end %>
-					<li><%= link_to "Spaetis with toilets", stores_path(toilet: Toilet.first.toilet_available) %></li>		
+					<% if Toilet.count > 0 %>
+						<li><%= link_to "Spaetis with toilets", stores_path(toilet: Toilet.first.toilet_available) %></li>
+					<% end %>		
 				</ul>
 			</div>
 		</nav>
