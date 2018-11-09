@@ -24,4 +24,6 @@ describe Store do
       expect(store.full_address).to eq ""
     end
   end
+
 end
+

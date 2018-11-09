@@ -1,12 +1,12 @@
 class Store < ApplicationRecord
-	belongs_to :user
-	belongs_to :toilet
+	belongs_to :user, required: false
+	belongs_to :toilet, required: false
 
 	validates :name, presence: true
 	validates :address, presence: true
 	validates :address_line2, presence: true
 	validates :address_line3, presence: true
-	validates :toilet, presence: true
+	# validates :toilet, presence: true
 	# validates :latitude, presence: true
 	# validates :longitude, presence: true
 	validates :beer_cost, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than: 0, less_than: 10 }
