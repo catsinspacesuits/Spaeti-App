@@ -1,13 +1,12 @@
-<h2><%= 'Shop Name: ' + @store.capitalize_name %></h2>
-<h3><%= 'Address: ' + @store.capitalize_address %></h3>
-<!-- <h3><%= 'Latitude: ' + @store.latitude.to_s %></h3>
-<h3><%= 'Longitude: ' + @store.longitude.to_s %></h3> -->
-<h3><%= 'Cost of Berliner Pilsner (0.5l): €' + @store.beer_cost.to_s %></h3>
-<!-- <h3><%= 'Toilet: ' + @store.toilet.toilet_available %></h3> -->
-<% if @store.toilet.toilet_available == "Yes" %>
-<h3><%= "This Spaeti has a toilet!" %></h3>
-<% else %> 
-<% end %>
+<main class="container show-container">
+  <h2><%= @store.capitalize_name %></h2>
+  <h3><%= 'Address: ' + @store.capitalize_address %></h3>
+  <h3><%= 'Cost of Berliner Pilsner (0.5l): €' + @store.beer_cost.to_s %></h3>
+  <% if @store.toilet.toilet_available == "Yes" %>
+    <h3><%= "This Spaeti has a toilet!" %></h3>
+  <% else %> 
+  <% end %>
+</main>
 
 <%= map(:center => {
     :latlng => [ @store.latitude, @store.longitude ],

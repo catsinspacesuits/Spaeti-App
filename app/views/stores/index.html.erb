@@ -9,8 +9,10 @@
   
 ) %>
 
-<% @stores.each do |store| %>
-    <h2><%= link_to store.capitalize_name, store_path(store) + ': ' + store.capitalize_address %></h2>
-<% end %>
-
+<main class="container index-container">
+	<h1>Spätis</h1>
+	<% @stores.each do |store| %>
+	    <h3 class="store-heading"><%= link_to store.capitalize_name, store_path(store) + ': ' + store.capitalize_address %></h3>
+	<% end %>
+</main>
 
