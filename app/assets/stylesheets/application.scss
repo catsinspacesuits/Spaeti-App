@@ -26,9 +26,23 @@
  	margin: 0 auto;
   }
 
+// NAVBAR
+
+.navbar {
+	margin: 0;
+}
+
 // INDEX
 
 .index-container {
 	padding: 20px;
 }
  
+
+// MEDIA QUERIES
+
+@media only screen and (max-width: 600px) {
+    #map {height: 250px;
+        
+    }
+}

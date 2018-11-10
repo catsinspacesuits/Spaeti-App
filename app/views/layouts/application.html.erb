@@ -24,13 +24,13 @@
   	    </div>
   	    <div class="collapse navbar-collapse" id="myNavbar">
   	      <ul class="nav navbar-nav">
-  	        <li><%= link_to "Spätis with toilets", stores_path(toilet: Toilet.first.toilet_available) %></li>
   	      <!-- Can only add spaeti when logged in. Directed to Log in if not logged in -->
 	  	      <% if user_signed_in? %>
 	  	      	<li><%= link_to "Add Späti", new_store_path %></li>
 	  	      <% else %>  
 	  	        <li><%= link_to "Add Späti", new_user_session_path %></li>
 	  	      <% end %>
+	  	      <li><%= link_to "View spätis with toilets", stores_path(toilet: Toilet.first.toilet_available) %></li>
   	      </ul>
   	      <ul class="nav navbar-nav navbar-right">
   	      	<!-- Log out shows when logged in. Log in shows when not logged in -->
