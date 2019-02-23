@@ -2,10 +2,6 @@
   <h2><%= @store.capitalize_name %></h2>
   <h3><%= 'Address: ' + @store.capitalize_address %></h3>
   <h3><%= 'Cost of Berliner Pilsner (0.5l): €' + @store.beer_cost.to_s %></h3>
-  <% if @store.toilet.toilet_available == "Yes" %>
-    <h3><%= "This Spaeti has a toilet!" %></h3>
-  <% else %> 
-  <% end %>
 </main>
 
 <%= map(:center => {

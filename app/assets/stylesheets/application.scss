@@ -38,11 +38,16 @@
 	padding: 20px;
 }
  
+// ALERTS AND NOTICES
+
+.alert, .notice {
+	float: left;
+} 
 
 // MEDIA QUERIES
 
 @media only screen and (max-width: 600px) {
-    #map {height: 250px;
-        
+    #map {
+    	height: 250px;  
     }
 }

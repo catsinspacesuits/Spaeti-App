@@ -30,7 +30,6 @@
 	  	      <% else %>  
 	  	        <li><%= link_to "Add Späti", new_user_session_path %></li>
 	  	      <% end %>
-	  	      <li><%= link_to "View spätis with toilets", stores_path(toilet: Toilet.first.toilet_available) %></li>
   	      </ul>
   	      <ul class="nav navbar-nav navbar-right">
   	      	<!-- Log out shows when logged in. Log in shows when not logged in -->
@@ -48,7 +47,7 @@
 		<p class="notice"><%= notice %></p>
 		<p class="alert"><%= alert %></p>
 
-    <%= yield %>
+    	<%= yield %>
 
   </body>
 </html>

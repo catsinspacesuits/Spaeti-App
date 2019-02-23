@@ -23,15 +23,9 @@ ActiveRecord::Schema.define(version: 20180814220216) do
     t.float "longitude"
     t.boolean "toilet"
     t.string "address_line2"
-    t.integer "user_id"
-    t.integer "toilet_id"
     t.string "address_line3"
-  end
-
-  create_table "toilets", force: :cascade do |t|
+    t.integer "user_id"
     t.string "toilet_available"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
